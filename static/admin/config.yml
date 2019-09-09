@@ -12,6 +12,7 @@ collections:
     create: true
     slug: "{{title}}"
     fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Project", name: "featuredProject", widget: "boolean"}
       - {label: "Project Date", name: "projectDate", widget: "datetime"}
