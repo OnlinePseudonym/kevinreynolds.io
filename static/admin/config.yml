@@ -33,8 +33,8 @@ collections:
                   widget: object,
                   fields:
                     [
-                      {label: 'Top Color', name: topColor, widget: color},
-                      {label: 'Bottom Color', name: bottomColor, widget: color}
+                      {label: 'Top Color', name: topColor, widget: string},
+                      {label: 'Bottom Color', name: bottomColor, widget: string}
                     ]
                 },
                 {
@@ -43,8 +43,8 @@ collections:
                   widget: object,
                   fields:
                     [
-                      {label: 'Top Color', name: topColor, widget: color},
-                      {label: 'Bottom Color', name: bottomColor, widget: color}
+                      {label: 'Top Color', name: topColor, widget: string},
+                      {label: 'Bottom Color', name: bottomColor, widget: string}
                     ]
                 },
                 {
@@ -53,8 +53,8 @@ collections:
                   widget: object,
                   fields:
                     [
-                      {label: 'Background', name: background, widget: color},
-                      {label: 'Outline', name: outline, widget: color}
+                      {label: 'Background', name: background, widget: string},
+                      {label: 'Outline', name: outline, widget: string}
                     ]
                 }
               ]
@@ -113,10 +113,14 @@ collections:
                 {label: Image, name: image, widget: image},
                 {label: Content, name: content, widget: markdown},
               ] 
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
-          - {label: Description, name: description, widget: string}
-          - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
-          - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
+          - label: 'Site Metadata',
+            name: siteMetadata,
+            widget: object,
+            fields: 
+              [
+                {label: 'Html Title', name: htmlTitle, widget: string},
+                {label: 'Meta Description', name: metaDescription, widget: string}
+              ]
       - file: "src/pages/projects/index.md"
         label: "Projects Page"
         name: "projects"

@@ -77,7 +77,7 @@ const Header = () => (
             <Link to="/blog">Blog</Link>
           </NavItem>
           <NavItem>
-            <Link to="/products">Projects</Link>
+            <Link to="/projects">Projects</Link>
           </NavItem>
           <NavItem>
             <Link to="/contact">Contact</Link>
