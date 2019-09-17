@@ -15,6 +15,7 @@ collections:
         name: "generalSettings"
         file: "src/data/gen.yaml"
         fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "generalSettings"}
           - label: "Social Links"
             name: "socialLinks"
             widget: "object"
