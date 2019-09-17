@@ -7,7 +7,7 @@ public_folder: /img
 
 collections:
   - name: "globalPreferences"
-    label: "Global Prefernces"
+    label: "Global Preferences"
     editor:
       preview: false
     files:
