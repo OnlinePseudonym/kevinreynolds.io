@@ -1,6 +1,6 @@
 import React from 'react'
 import { navigate } from 'gatsby-link'
-import Layout from '../../components/Layout'
+import Master from '../../components/Master'
 
 function encode(data) {
   const formData = new FormData()
@@ -42,7 +42,7 @@ export default class Contact extends React.Component {
 
   render() {
     return (
-      <Layout>
+      <Master>
         <section className="section">
           <div className="container">
             <div className="content">
@@ -102,7 +102,7 @@ export default class Contact extends React.Component {
             </div>
           </div>
         </section>
-      </Layout>
+      </Master>
     )
   }
 }

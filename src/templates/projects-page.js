@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Master from '../components/Master'
 import Features from '../components/Features'
 import Testimonials from '../components/Testimonials'
 import Pricing from '../components/Pricing'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
-export const ProductPageTemplate = ({
+export const ProjectPageTemplate = ({
   image,
   title,
   heading,
@@ -104,7 +104,7 @@ export const ProductPageTemplate = ({
   </div>
 )
 
-ProductPageTemplate.propTypes = {
+ProjectPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -128,12 +128,12 @@ ProductPageTemplate.propTypes = {
   }),
 }
 
-const ProductPage = ({ data }) => {
+const ProjectPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout>
-      <ProductPageTemplate
+    <Master>
+      <ProjectPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -144,11 +144,11 @@ const ProductPage = ({ data }) => {
         fullImage={frontmatter.full_image}
         pricing={frontmatter.pricing}
       />
-    </Layout>
+    </Master>
   )
 }
 
-ProductPage.propTypes = {
+ProjectPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object,
@@ -156,10 +156,10 @@ ProductPage.propTypes = {
   }),
 }
 
-export default ProductPage
+export default ProjectPage
 
-export const productPageQuery = graphql`
-  query ProductPage($id: String!) {
+export const ProjectPageQuery = graphql`
+  query ProjectPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title

@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from '../../components/Layout'
+import Master from '../../components/Master'
 
 export default () => (
-  <Layout>
+  <Master>
     <section className="section">
       <div className="container">
         <div className="content">
@@ -11,5 +11,5 @@ export default () => (
         </div>
       </div>
     </section>
-  </Layout>
+  </Master>
 )

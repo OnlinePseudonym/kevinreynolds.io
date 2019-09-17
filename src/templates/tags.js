@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Master from '../components/Master'
 
 class TagRoute extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class TagRoute extends React.Component {
     } tagged with “${tag}”`
 
     return (
-      <Layout>
+      <Master>
         <section className="section">
           <Helmet title={`${tag} | ${title}`} />
           <div className="container content">
@@ -39,7 +39,7 @@ class TagRoute extends React.Component {
             </div>
           </div>
         </section>
-      </Layout>
+      </Master>
     )
   }
 }

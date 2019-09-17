@@ -6,6 +6,58 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "globalPreferences"
+    label: "Global Prefernces"
+    editor:
+      preview: false
+    files:
+      - label: "General Settings"
+        name: "generalSettings"
+        file: "src/data/gen.yml"
+        fields:
+          - label: "Social Links"
+            name: "socialLinks"
+            widget: "object"
+            fields:
+              - {label: "GitHub Url", name: "githubUrl", widget: "string", required: false}
+              - {label: "LinkedIn Url", name: "linkedinUrl", widget: "string", required: false}
+              - {label: "Site Logo", name: "siteLogo", widget: "image", required: false}
+          - label: 'Shape Colors'
+            name: shapeColors
+            widget: object
+            fields:
+              [
+                {
+                  label: 'Foreground Blob',
+                  name: foregroundBlob,
+                  widget: object,
+                  fields:
+                    [
+                      {label: 'Top Color', name: topColor, widget: color},
+                      {label: 'Bottom Color', name: bottomColor, widget: color}
+                    ]
+                },
+                {
+                  label: 'Background Blob',
+                  name: backgroundBlob,
+                  widget: object,
+                  fields:
+                    [
+                      {label: 'Top Color', name: topColor, widget: color},
+                      {label: 'Bottom Color', name: bottomColor, widget: color}
+                    ]
+                },
+                {
+                  label: Rectangle,
+                  name: rectangle,
+                  widget: object,
+                  fields:
+                    [
+                      {label: 'Background', name: background, widget: color},
+                      {label: 'Outline', name: outline, widget: color}
+                    ]
+                }
+              ]
   - name: "projects"
     label: "Projects"
     folder: "src/pages/projects"
@@ -32,52 +84,44 @@ collections:
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Featured Image", name: "featuredimage", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
-  - name: "globalPreferences"
-    label: "Global Prefernces"
-    editor:
-      preview: false
-    files:
-      - label: "General Settings"
-        name: "generalSettings"
-        file: "src/data/gen.yml"
-        fields:
-          - label: "Social Links"
-            name: "socialLinks"
-            widget: "object"
-            fields:
-              - {label: "GitHub Url", name: "githubUrl", widget: "string", required: false}
-              - {label: "LinkedIn Url", name: "linkedinUrl", widget: "string", required: false}
-              - {label: "Site Logo", name: "siteLogo", widget: "image", required: false}
-          
+      - {label: "Tags", name: "tags", widget: "list"}    
   - name: "pages"
     label: "Pages"
     files:
       - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
+        label: "Home"
+        name: "home"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Subheading, name: subheading, widget: string}
+          - label: Icons,
+            name: icons,
+            widget: list,
+            fields:
+              [
+                {label: Image, name: image, widget: image},
+                {label: Alt Text, name: altText, widget: string}
+              ]
+          - label: Tiles,
+            name: tiles,
+            widget: list,
+            fields:
+              [  
+                {label: Image, name: image, widget: image},
+                {label: Content, name: content, widget: markdown},
+              ] 
           - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
           - {label: Description, name: description, widget: string}
           - {label: Intro, name: intro, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Blurbs, name: blurbs, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Text, name: text, widget: text}]}]}
           - {label: Main, name: main, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: text}, {label: Image1, name: image1, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image2, name: image2, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}, {label: Image3, name: image3, widget: object, fields: [{label: Image, name: image, widget: image}, {label: Alt, name: alt, widget: string}]}]}
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      - file: "src/pages/projects/index.md"
+        label: "Projects Page"
+        name: "projects"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      - file: "src/pages/products/index.md"
-        label: "Products Page"
-        name: "products"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projects-page"}
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
