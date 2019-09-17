@@ -1,0 +1,12 @@
+socialLinks:
+  githubUrl: ''
+shapeColors:
+  backgroundBlob:
+    bottomColor: '#2fd83d'
+    topColor: '#359cff'
+  foregroundBlob:
+    bottomColor: '#b935ff'
+    topColor: '#2fd83d'
+  rectangle:
+    background: '#ff9a29'
+    outline: '#b935ff'
