@@ -5,13 +5,13 @@ import { withPrefix } from "gatsby"
 import Footer from './layout/Footer'
 import Header from './layout/Header'
 
-import useSiteMetadata from './SiteMetadata'
+//import useSiteMetadata from './SiteMetadata'
 
 import '../css/normalize.css'
 import '../css/styles.css'
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
+  const { title, description } = { title: "something", description: "something else"} //useSiteMetadata()
   return (
     <div>
       <Helmet>

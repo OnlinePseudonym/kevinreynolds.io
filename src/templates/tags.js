@@ -14,7 +14,6 @@ class TagRoute extends React.Component {
       </li>
     ))
     const tag = this.props.pageContext.tag
-    const title = this.props.data.site.siteMetadata.title
     const totalCount = this.props.data.allMarkdownRemark.totalCount
     const tagHeader = `${totalCount} post${
       totalCount === 1 ? '' : 's'
@@ -23,7 +22,7 @@ class TagRoute extends React.Component {
     return (
       <Master>
         <section className="section">
-          <Helmet title={`${tag} | ${title}`} />
+          <Helmet title={`${tag} | `} />
           <div className="container content">
             <div className="columns">
               <div
@@ -48,11 +47,6 @@ export default TagRoute
 
 export const tagPageQuery = graphql`
   query TagPage($tag: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }

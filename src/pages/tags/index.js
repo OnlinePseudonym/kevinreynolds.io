@@ -6,15 +6,12 @@ import Master from '../../components/Master'
 
 const TagsPage = ({
   data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
+    allMarkdownRemark: { group }
   },
 }) => (
   <Master>
     <section className="section">
-      <Helmet title={`Tags | ${title}`} />
+      <Helmet title={`Tags | `} />
       <div className="container content">
         <div className="columns">
           <div
@@ -42,11 +39,6 @@ export default TagsPage
 
 export const tagPageQuery = graphql`
   query TagsQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(limit: 1000) {
       group(field: frontmatter___tags) {
         fieldValue

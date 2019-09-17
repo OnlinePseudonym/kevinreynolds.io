@@ -113,8 +113,8 @@ collections:
                 {label: Image, name: image, widget: image},
                 {label: Content, name: content, widget: markdown},
               ] 
-          - label: 'Site Metadata',
-            name: siteMetadata,
+          - label: 'SEO Metadata'
+            name: seoMetadata,
             widget: object,
             fields: 
               [
