@@ -1,6 +1,6 @@
 ---
 templateKey: project
-title: React Calculator a
+title: React Calculator
 featuredProject: false
 projectDate: 2018-03-01T07:07:22.301Z
 projectImage: /img/blog-index.jpg
