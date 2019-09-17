@@ -13,7 +13,7 @@ collections:
     files:
       - label: "General Settings"
         name: "generalSettings"
-        file: "src/data/gen.yml"
+        file: "src/data/gen.yaml"
         fields:
           - label: "Social Links"
             name: "socialLinks"
