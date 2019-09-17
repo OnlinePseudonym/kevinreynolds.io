@@ -15,7 +15,6 @@ collections:
         name: "generalSettings"
         file: "src/data/gen.yaml"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "generalSettings"}
           - label: "Social Links"
             name: "socialLinks"
             widget: "object"
@@ -98,25 +97,25 @@ collections:
           - {label: Image, name: image, widget: image}
           - {label: Heading, name: heading, widget: string}
           - {label: Subheading, name: subheading, widget: string}
-          - label: Icons,
-            name: icons,
-            widget: list,
+          - label: Icons
+            name: icons
+            widget: list
             fields:
               [
                 {label: Image, name: image, widget: image},
                 {label: Alt Text, name: altText, widget: string}
               ]
-          - label: Tiles,
-            name: tiles,
-            widget: list,
+          - label: Tiles
+            name: tiles
+            widget: list
             fields:
               [  
                 {label: Image, name: image, widget: image},
                 {label: Content, name: content, widget: markdown},
               ] 
           - label: 'SEO Metadata'
-            name: seoMetadata,
-            widget: object,
+            name: seoMetadata
+            widget: object
             fields: 
               [
                 {label: 'Html Title', name: htmlTitle, widget: string},
